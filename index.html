@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NotiWeb: plataforma de noticias educativas, tecnológicas, turísticas y comerciales.">
+  <title>Inicio | NotiWeb</title>
+
+  <!-- Estilos: tokens y tipografía → estructura → componentes -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (idéntico en todas las páginas) ================= -->
+  <header class="site-header">
+    <!-- Barra superior: fecha actual y ciudad -->
+    <div class="topbar">
+      <div class="wrap topbar__inner">
+        <time class="topbar__fecha" data-fecha-actual></time>
+        <span class="topbar__ciudad">Bogotá, Colombia</span>
+      </div>
+    </div>
+
+    <!-- Fila principal: marca y menú -->
+    <div class="wrap header__inner">
+      <a class="brand" href="index.html" aria-label="NotiWeb, ir al inicio">
+        <span class="brand__name">NotiWeb</span>
+        <span class="brand__tag">Plataforma de noticias</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-controls="menu-principal"
+              aria-expanded="false" aria-label="Abrir menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="nav__link" href="noticias.html">Noticias</a></li>
+          <li><a class="nav__link" href="favoritos.html">Favoritos</a></li>
+          <li><a class="nav__link" href="contacto.html">Contacto</a></li>
+          <li><a class="nav__link" href="gestion.html">Gestión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= BIENVENIDA ================= -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="wrap hero__inner">
+        <div class="hero__content">
+          <span class="chip">Bienvenido</span>
+          <h1 class="hero__title" id="titulo-hero">Las noticias que te interesan, en un solo lugar</h1>
+          <p class="hero__text">
+            Explora noticias educativas, tecnológicas, turísticas y comerciales, consulta
+            su información completa y guarda tus favoritas para leerlas cuando quieras.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="noticias.html">Explorar noticias</a>
+            <a class="btn btn--ghost" href="contacto.html">Contáctanos</a>
+          </div>
+        </div>
+
+        <figure class="hero__media">
+          <img src="img/hero.svg" alt="Imagen destacada de la portada de NotiWeb">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= NOTICIAS DESTACADAS ================= -->
+    <section class="section" aria-labelledby="titulo-destacadas">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title" id="titulo-destacadas">Noticias destacadas</h2>
+          <a class="section__link" href="noticias.html">
+            Ver todas
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Las cards se generan desde data/noticias.json (js/home.js) -->
+        <div class="grid-cards" id="grilla-destacadas" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ================= LLAMADO A LA ACCIÓN ================= -->
+    <section class="cta" aria-labelledby="titulo-cta">
+      <div class="wrap cta__inner">
+        <div>
+          <h2 class="cta__title" id="titulo-cta">Arma tu propia lista de favoritos</h2>
+          <p class="cta__text">
+            Guarda las noticias que más te interesan y encuéntralas en un solo lugar cada vez que vuelvas.
+          </p>
+        </div>
+        <a class="btn btn--primary" href="favoritos.html">Ver mis favoritos</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (idéntico en todas las páginas) ================= -->
+  <footer class="site-footer">
+    <div class="wrap footer__grid">
+      <div class="footer__about">
+        <p class="footer__brand">NotiWeb</p>
+        <p class="footer__desc">
+          Plataforma web de noticias educativas, tecnológicas, turísticas y comerciales.
+          Explora, guarda tus favoritas y mantente informado.
+        </p>
+      </div>
+
+      <nav aria-label="Navegación del pie de página">
+        <h2 class="footer__title">Navegación</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="gestion.html">Gestión</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer__title">Contacto</h2>
+        <ul class="footer__contact">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/>
+            </svg>
+            contacto@notiweb.co
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/>
+            </svg>
+            +57 (601) 555 0123
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
+            </svg>
+            Bogotá, Colombia
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <p class="footer__bottom">© 2026 NotiWeb — Proyecto académico. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: datos → comunes → lógica de la página -->
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
