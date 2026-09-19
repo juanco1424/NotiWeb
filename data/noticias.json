@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "titulo": "Nuevo laboratorio de inteligencia artificial abre sus puertas en Bogotá",
+    "categoria": "Tecnología",
+    "resumen": "El espacio ofrecerá formación gratuita a estudiantes universitarios y apoyará proyectos de emprendimiento basados en datos.",
+    "contenido": [
+      "El laboratorio, ubicado en el centro de la ciudad, cuenta con equipos de cómputo de alto rendimiento y un equipo de mentores especializados en aprendizaje automático.",
+      "Durante el primer año se espera atender a más de 1.200 estudiantes a través de cursos cortos, talleres prácticos y retos de innovación abiertos a toda la comunidad.",
+      "Sus promotores destacan que la iniciativa busca cerrar la brecha entre la academia y la industria tecnológica del país."
+    ],
+    "imagen": "img/tecnologia.svg",
+    "autor": "Redacción NotiWeb",
+    "fecha": "2026-09-13",
+    "minutosLectura": 4,
+    "destacada": true
+  },
+  {
+    "id": 2,
+    "titulo": "Universidades amplían la oferta de becas para programas virtuales",
+    "categoria": "Educación",
+    "resumen": "Más de 3.000 cupos nuevos estarán disponibles el próximo semestre para estudiantes de regiones apartadas del país.",
+    "contenido": [
+      "Las instituciones participantes anunciaron que las becas cubrirán hasta el 90 % de la matrícula en programas técnicos, tecnológicos y profesionales.",
+      "Los aspirantes podrán inscribirse en línea hasta finales de octubre y los resultados se publicarán en noviembre.",
+      "La convocatoria prioriza a jóvenes de municipios con baja cobertura en educación superior."
+    ],
+    "imagen": "img/educacion.svg",
+    "autor": "María Fernanda Ruiz",
+    "fecha": "2026-09-12",
+    "minutosLectura": 5,
+    "destacada": true
+  },
+  {
+    "id": 3,
+    "titulo": "El Eje Cafetero registra récord de visitantes en temporada de mitad de año",
+    "categoria": "Turismo",
+    "resumen": "La ocupación hotelera superó el 85 % y los parques temáticos reportaron cifras históricas de ingreso.",
+    "contenido": [
+      "Según los gremios del sector, la llegada de turistas nacionales y extranjeros creció un 18 % frente al mismo periodo del año anterior.",
+      "Las fincas cafeteras y los recorridos de naturaleza fueron las experiencias más solicitadas por los visitantes.",
+      "Las autoridades locales anunciaron nuevas inversiones en vías y señalización turística para sostener el crecimiento."
+    ],
+    "imagen": "img/turismo.svg",
+    "autor": "Andrés Gómez",
+    "fecha": "2026-09-11",
+    "minutosLectura": 3,
+    "destacada": true
+  },
+  {
+    "id": 4,
+    "titulo": "Comercio electrónico crece 22 % impulsado por pequeñas empresas",
+    "categoria": "Comercial",
+    "resumen": "Las mipymes lideran la adopción de tiendas en línea y medios de pago digitales en el último trimestre.",
+    "contenido": [
+      "El informe trimestral del sector muestra que las compras por internet ya representan una parte relevante de las ventas del comercio minorista.",
+      "Las categorías de moda, tecnología y alimentos concentraron la mayor cantidad de transacciones.",
+      "Los expertos recomiendan fortalecer la logística de última milla para mantener el ritmo de crecimiento."
+    ],
+    "imagen": "img/comercial.svg",
+    "autor": "Laura Martínez",
+    "fecha": "2026-09-10",
+    "minutosLectura": 4,
+    "destacada": false
+  },
+  {
+    "id": 5,
+    "titulo": "Colegios públicos incorporan la programación en su plan de estudios",
+    "categoria": "Educación",
+    "resumen": "Desde el próximo año, estudiantes de sexto a noveno grado recibirán clases semanales de pensamiento computacional.",
+    "contenido": [
+      "La medida hace parte de una estrategia nacional para fortalecer las competencias digitales desde la educación básica.",
+      "Los docentes recibirán capacitación durante el último trimestre del año con apoyo de universidades aliadas.",
+      "El programa incluye la entrega de material didáctico y acceso a plataformas de aprendizaje en línea."
+    ],
+    "imagen": "img/educacion.svg",
+    "autor": "Redacción NotiWeb",
+    "fecha": "2026-09-09",
+    "minutosLectura": 3,
+    "destacada": false
+  },
+  {
+    "id": 6,
+    "titulo": "Startups colombianas presentan soluciones de energía solar para zonas rurales",
+    "categoria": "Tecnología",
+    "resumen": "Cinco emprendimientos fueron seleccionados para llevar paneles solares de bajo costo a comunidades sin conexión eléctrica.",
+    "contenido": [
+      "Los proyectos combinan paneles solares, baterías de larga duración y sistemas de monitoreo remoto.",
+      "La primera fase beneficiará a cerca de 400 familias en La Guajira y el Chocó.",
+      "Las empresas recibirán acompañamiento técnico y financiación semilla durante doce meses."
+    ],
+    "imagen": "img/tecnologia.svg",
+    "autor": "Camilo Herrera",
+    "fecha": "2026-09-08",
+    "minutosLectura": 5,
+    "destacada": false
+  },
+  {
+    "id": 7,
+    "titulo": "Cartagena lanza ruta cultural por su centro histórico",
+    "categoria": "Turismo",
+    "resumen": "El recorrido gratuito incluye museos, plazas y murallas, con guías bilingües y señalización accesible.",
+    "contenido": [
+      "La ruta está diseñada para recorrerse a pie en aproximadamente tres horas y cuenta con puntos de hidratación.",
+      "Cada parada ofrece códigos QR con información histórica en español e inglés.",
+      "La iniciativa busca distribuir mejor el flujo de visitantes y apoyar a los comercios locales."
+    ],
+    "imagen": "img/turismo.svg",
+    "autor": "Valentina Ortiz",
+    "fecha": "2026-09-07",
+    "minutosLectura": 3,
+    "destacada": false
+  },
+  {
+    "id": 8,
+    "titulo": "Ferias empresariales regresan con énfasis en productos sostenibles",
+    "categoria": "Comercial",
+    "resumen": "Más de 250 expositores participarán en la edición de este año, centrada en economía circular y comercio justo.",
+    "contenido": [
+      "La feria contará con ruedas de negocios, conferencias y espacios de exhibición para emprendimientos verdes.",
+      "Los organizadores esperan generar expectativas de negocio superiores a las de la edición anterior.",
+      "El evento se realizará durante cuatro días y tendrá entrada libre para el público general."
+    ],
+    "imagen": "img/comercial.svg",
+    "autor": "Redacción NotiWeb",
+    "fecha": "2026-09-06",
+    "minutosLectura": 4,
+    "destacada": false
+  },
+  {
+    "id": 9,
+    "titulo": "Bibliotecas públicas abren espacios de estudio 24 horas en época de exámenes",
+    "categoria": "Educación",
+    "resumen": "La medida estará vigente durante noviembre y beneficiará a estudiantes que no cuentan con un lugar adecuado para estudiar.",
+    "contenido": [
+      "Los espacios contarán con conexión a internet, puntos de carga y acompañamiento de personal de seguridad.",
+      "Las bibliotecas también ofrecerán tutorías gratuitas en matemáticas y lectura crítica.",
+      "El acceso será gratuito presentando el carné estudiantil o un documento de identidad."
+    ],
+    "imagen": "img/educacion.svg",
+    "autor": "Sofía Castaño",
+    "fecha": "2026-09-05",
+    "minutosLectura": 2,
+    "destacada": false
+  },
+  {
+    "id": 10,
+    "titulo": "Aplicaciones de movilidad integran pagos con código QR en el transporte público",
+    "categoria": "Tecnología",
+    "resumen": "Los usuarios podrán pagar su pasaje desde el celular sin necesidad de recargar una tarjeta física.",
+    "contenido": [
+      "La integración comenzará con un piloto en las principales troncales del sistema de transporte.",
+      "Las autoridades aseguran que el nuevo medio de pago reducirá las filas en las estaciones.",
+      "La tarjeta física seguirá funcionando para quienes prefieran el método tradicional."
+    ],
+    "imagen": "img/tecnologia.svg",
+    "autor": "Redacción NotiWeb",
+    "fecha": "2026-09-04",
+    "minutosLectura": 3,
+    "destacada": false
+  },
+  {
+    "id": 11,
+    "titulo": "Avistamiento de ballenas atrae a miles de visitantes al Pacífico colombiano",
+    "categoria": "Turismo",
+    "resumen": "Bahía Solano y Nuquí se preparan para la temporada alta con protocolos de turismo responsable.",
+    "contenido": [
+      "Entre julio y octubre, las ballenas jorobadas llegan a las costas del Pacífico para reproducirse.",
+      "Los operadores turísticos deben respetar distancias mínimas y horarios definidos por las autoridades ambientales.",
+      "Las comunidades locales participan activamente como guías y anfitriones de los visitantes."
+    ],
+    "imagen": "img/turismo.svg",
+    "autor": "Andrés Gómez",
+    "fecha": "2026-09-03",
+    "minutosLectura": 4,
+    "destacada": false
+  },
+  {
+    "id": 12,
+    "titulo": "Plazas de mercado se modernizan con ventas a domicilio",
+    "categoria": "Comercial",
+    "resumen": "Comerciantes tradicionales se unen a plataformas digitales para llevar productos frescos a los hogares.",
+    "contenido": [
+      "El programa ofrece capacitación en fotografía de producto, atención al cliente y manejo de pedidos en línea.",
+      "Más de 600 comerciantes de diferentes plazas ya se inscribieron en la primera convocatoria.",
+      "Los pedidos se entregan el mismo día en un radio de diez kilómetros."
+    ],
+    "imagen": "img/comercial.svg",
+    "autor": "Laura Martínez",
+    "fecha": "2026-09-02",
+    "minutosLectura": 3,
+    "destacada": false
+  }
+]
