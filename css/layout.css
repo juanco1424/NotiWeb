@@ -1,0 +1,433 @@
+/* ==========================================================================
+   NotiWeb — layout.css
+   Estructura de página: contenedores, header, footer, grillas y
+   secciones del Home. Incluye los ajustes responsive.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Contenedores
+   -------------------------------------------------------------------------- */
+
+/* Contenido centrado en 1080px con gutters de 60px */
+.wrap {
+  max-width: calc(var(--wrap) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* Columna estrecha para el artículo de detalle */
+.narrow {
+  max-width: calc(760px + var(--gutter) * 2);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   2. Header
+   -------------------------------------------------------------------------- */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Barra superior: fecha y ciudad */
+.topbar {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 38px;
+  font-size: 12px;
+  color: var(--soft);
+}
+
+.topbar__fecha::first-letter {
+  text-transform: uppercase;
+}
+
+/* Fila principal: marca + menú */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 78px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+}
+
+.brand:hover {
+  color: var(--ink);
+}
+
+.brand__name {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.3px;
+}
+
+.brand__tag {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--soft);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Menú de navegación */
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-h);
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.nav__link:hover {
+  color: var(--accent);
+}
+
+/* Enlace activo: acento + subrayado inferior de 2px */
+.nav__link[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Botón hamburguesa (solo visible en móvil) */
+.nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-h);
+  height: var(--control-h);
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   3. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--dark);
+  color: var(--dark-text);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.4fr;
+  gap: 48px;
+  padding-block: 56px 40px;
+}
+
+.footer__brand {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer__desc {
+  max-width: 340px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.footer__title {
+  margin-bottom: 14px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer__list li + li {
+  margin-top: 4px;
+}
+
+.footer__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--dark-text);
+}
+
+.footer__list a:hover {
+  color: #ffffff;
+}
+
+.footer__contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+}
+
+.footer__contact svg {
+  flex-shrink: 0;
+  color: var(--footer-dim);
+}
+
+.footer__bottom {
+  padding-block: 20px;
+  border-top: 1px solid var(--dark-sep);
+  font-size: 12px;
+  color: var(--footer-dim);
+}
+
+/* --------------------------------------------------------------------------
+   4. Grilla de cards
+   -------------------------------------------------------------------------- */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Secciones del Home
+   -------------------------------------------------------------------------- */
+
+/* Bienvenida (hero) */
+.hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 56px;
+  padding-block: 64px;
+}
+
+.hero__title {
+  margin-top: 16px;
+  font-size: 46px;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+}
+
+.hero__text {
+  margin-top: 18px;
+  max-width: 480px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero__media {
+  height: 300px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--img-ph);
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bloque genérico de sección con espaciado vertical */
+.section {
+  padding-block: 56px;
+}
+
+/* Encabezado de sección con línea inferior de 2px */
+.section__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.section__title {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.section__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--control-h);
+  margin-bottom: -12px; /* compensa el padding para alinear con el título */
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Banda de llamado a la acción (CTA) oscura */
+.cta {
+  background: var(--dark);
+  color: var(--dark-text);
+}
+
+.cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 48px;
+}
+
+.cta__title {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+.cta__text {
+  margin-top: 8px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. Responsive
+   -------------------------------------------------------------------------- */
+
+/* Tablet: grilla a 2 columnas, hero apilado, menú colapsable */
+@media (max-width: 960px) {
+  :root {
+    --gutter: 32px;
+  }
+
+  .grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 48px;
+  }
+
+  .hero__title {
+    font-size: 38px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__about {
+    grid-column: 1 / -1;
+  }
+
+  /* El menú pasa a un panel desplegable bajo el header */
+  .header__inner {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    padding-bottom: 12px;
+  }
+
+  .nav.is-open {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav__link {
+    width: 100%;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .nav__link[aria-current="page"] {
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: inset 3px 0 0 var(--accent);
+    padding-left: 12px;
+  }
+}
+
+/* Móvil: una sola columna */
+@media (max-width: 600px) {
+  :root {
+    --gutter: 18px;
+  }
+
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar__ciudad {
+    display: none;
+  }
+
+  .brand__tag {
+    display: none;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__media {
+    height: 220px;
+  }
+
+  .section__head {
+    flex-wrap: wrap;
+  }
+
+  .cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

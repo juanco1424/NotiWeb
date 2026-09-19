@@ -1,0 +1,123 @@
+/* ==========================================================================
+   NotiWeb — base.css
+   Reset mínimo, tokens de diseño (variables CSS tomadas de la maquetación
+   aprobada en Figma) y tipografía general.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens de diseño
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colores */
+  --bg:           #faf9f7;  /* fondo general */
+  --surface:      #ffffff;  /* tarjetas, header, bandas blancas */
+  --ink:          #1f1d1a;  /* texto principal */
+  --body:         #322f2a;  /* cuerpo del artículo (serif) */
+  --muted:        #57534b;  /* párrafos secundarios */
+  --soft:         #8a857b;  /* metadatos, migas de pan */
+  --placeholder:  #a09a8f;
+  --accent:       #8a2b25;  /* rojo vino: acento único */
+  --accent-dark:  #5f1d19;  /* hover de enlaces */
+  --border:       #e3ded4;
+  --hairline:     #f0ece4;
+  --input-border: #d8d2c7;
+  --img-ph:       #e8e4dc;  /* bloque marcador de imagen */
+  --dark:         #26241f;  /* CTA y footer */
+  --dark-text:    #b8b2a7;
+  --dark-sep:     #3b3831;
+  --footer-dim:   #8c877d;
+  --error:        #b3261e;
+  --error-bg:     #fdf6f5;
+  --ok-bg:        #f1f6f0;
+  --ok-border:    #cfe0cb;
+  --ok-text:      #3a5d36;
+
+  /* Familias tipográficas */
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Medidas comunes */
+  --radius:      3px;
+  --wrap:        1080px;  /* ancho útil del contenido */
+  --gutter:      60px;    /* margen lateral en escritorio */
+  --control-h:   44px;    /* altura mínima de áreas clicables */
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset mínimo
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, p, ul, ol, figure {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   3. Tipografía
+   -------------------------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+/* Foco visible y consistente para navegación por teclado */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Texto solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

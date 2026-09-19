@@ -1,0 +1,156 @@
+/* ==========================================================================
+   NotiWeb — componentes.css
+   Piezas reutilizables: botones, chips, cards y estados de carga/vacío.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Botones
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--control-h);
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* Primario: fondo acento, texto blanco */
+.btn--primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-dark);
+  color: #ffffff;
+}
+
+/* Secundario (ghost): fondo blanco con borde */
+.btn--ghost {
+  background: var(--surface);
+  border-color: var(--input-border);
+  color: #46423b;
+}
+
+.btn--ghost:hover {
+  border-color: var(--soft);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   2. Chip de categoría (etiqueta de texto)
+   -------------------------------------------------------------------------- */
+.chip {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   3. Card de noticia
+   -------------------------------------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card__media {
+  position: relative;
+  height: 170px;
+  background: var(--img-ph);
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.card__title {
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.card__title a {
+  color: var(--ink);
+}
+
+.card__title a:hover {
+  color: var(--accent);
+}
+
+.card__text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.card__meta {
+  font-size: 12px;
+  color: var(--soft);
+}
+
+/* Pie de la card: metadatos a la izquierda, "Ver más" a la derecha */
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--hairline);
+}
+
+.card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--control-h);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. Estados de la grilla (cargando / vacío / error)
+   -------------------------------------------------------------------------- */
+.estado {
+  grid-column: 1 / -1;
+  padding: 40px 24px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--muted);
+}
+
+.estado--error {
+  border-color: var(--error);
+  background: var(--error-bg);
+  color: var(--error);
+}
