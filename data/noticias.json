@@ -7,13 +7,18 @@
     "contenido": [
       "El laboratorio, ubicado en el centro de la ciudad, cuenta con equipos de cómputo de alto rendimiento y un equipo de mentores especializados en aprendizaje automático.",
       "Durante el primer año se espera atender a más de 1.200 estudiantes a través de cursos cortos, talleres prácticos y retos de innovación abiertos a toda la comunidad.",
+      {
+        "subtitulo": "Cómo participar"
+      },
+      "Los interesados deben inscribirse en línea con una breve descripción del proyecto que quieren desarrollar. Un comité revisará las propuestas según su impacto y viabilidad técnica.",
       "Sus promotores destacan que la iniciativa busca cerrar la brecha entre la academia y la industria tecnológica del país."
     ],
     "imagen": "img/tecnologia.svg",
     "autor": "Redacción NotiWeb",
     "fecha": "2026-09-13",
     "minutosLectura": 4,
-    "destacada": true
+    "destacada": true,
+    "pieFoto": "Sala principal del nuevo laboratorio de inteligencia artificial."
   },
   {
     "id": 2,

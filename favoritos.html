@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NotiWeb: plataforma de noticias educativas, tecnológicas, turísticas y comerciales.">
-  <title>Inicio | NotiWeb</title>
+  <meta name="description" content="Noticias guardadas como favoritas en NotiWeb.">
+  <title>Favoritos | NotiWeb</title>
 
   <!-- Estilos: tokens y tipografía → estructura → componentes -->
   <link rel="stylesheet" href="css/base.css">
@@ -40,9 +40,9 @@
 
       <nav class="nav" id="menu-principal" aria-label="Menú principal">
         <ul class="nav__list">
-          <li><a class="nav__link" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="nav__link" href="index.html">Inicio</a></li>
           <li><a class="nav__link" href="noticias.html">Noticias</a></li>
-          <li><a class="nav__link" href="favoritos.html">Favoritos</a></li>
+          <li><a class="nav__link" href="favoritos.html" aria-current="page">Favoritos</a></li>
           <li><a class="nav__link" href="contacto.html">Contacto</a></li>
           <li><a class="nav__link" href="gestion.html">Gestión</a></li>
         </ul>
@@ -51,61 +51,37 @@
   </header>
 
   <main>
-    <!-- ================= BIENVENIDA ================= -->
-    <section class="hero" aria-labelledby="titulo-hero">
-      <div class="wrap hero__inner">
-        <div class="hero__content">
-          <span class="chip">Bienvenido</span>
-          <h1 class="hero__title" id="titulo-hero">Las noticias que te interesan, en un solo lugar</h1>
-          <p class="hero__text">
-            Explora noticias educativas, tecnológicas, turísticas y comerciales, consulta
-            su información completa y guarda tus favoritas para leerlas cuando quieras.
+    <!-- ================= ENCABEZADO ================= -->
+    <section class="page-head" aria-labelledby="titulo-favoritos">
+      <div class="wrap page-head__inner">
+        <nav class="migas" aria-label="Migas de pan">
+          <ol class="migas__lista">
+            <li><a href="index.html">Inicio</a></li>
+            <li aria-current="page">Favoritos</li>
+          </ol>
+        </nav>
+
+        <div class="page-head__top">
+          <h1 class="page-head__title" id="titulo-favoritos">Mis favoritos</h1>
+          <button class="btn btn--ghost" id="vaciar-favoritos" type="button" hidden>
+            Quitar todos
+          </button>
+        </div>
+
+        <div class="page-head__tools">
+          <p class="page-head__intro">
+            Las noticias que marcas con el corazón quedan guardadas aquí, en este navegador.
           </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="noticias.html">Explorar noticias</a>
-            <a class="btn btn--ghost" href="contacto.html">Contáctanos</a>
-          </div>
+          <p class="page-head__count" id="contador" aria-live="polite"></p>
         </div>
-
-        <figure class="hero__media">
-          <img src="img/hero.svg" alt="Imagen destacada de la portada de NotiWeb">
-        </figure>
       </div>
     </section>
 
-    <!-- ================= NOTICIAS DESTACADAS ================= -->
-    <section class="section" aria-labelledby="titulo-destacadas">
+    <!-- ================= NOTICIAS GUARDADAS ================= -->
+    <section class="listado" aria-label="Noticias guardadas">
       <div class="wrap">
-        <div class="section__head">
-          <h2 class="section__title" id="titulo-destacadas">Noticias destacadas</h2>
-          <a class="section__link" href="noticias.html">
-            Ver todas
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
-                 stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Las cards se generan desde data/noticias.json (js/home.js) -->
-        <div class="grid-cards" id="grilla-destacadas" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <!-- ================= LLAMADO A LA ACCIÓN ================= -->
-    <!-- Caja oscura dentro del contenedor: deja espacio claro antes del footer
-         para que el pie de página se vea igual que en las demás páginas -->
-    <section class="cta" aria-labelledby="titulo-cta">
-      <div class="wrap">
-        <div class="cta__inner">
-          <div>
-            <h2 class="cta__title" id="titulo-cta">Arma tu propia lista de favoritos</h2>
-            <p class="cta__text">
-              Guarda las noticias que más te interesan y encuéntralas en un solo lugar cada vez que vuelvas.
-            </p>
-          </div>
-          <a class="btn btn--primary" href="favoritos.html">Ver mis favoritos</a>
-        </div>
+        <!-- Las cards se generan en js/favoritos.js -->
+        <div class="grid-cards" id="grilla-favoritos" aria-live="polite"></div>
       </div>
     </section>
   </main>
@@ -168,6 +144,6 @@
   <!-- Scripts: datos → comunes → lógica de la página -->
   <script src="js/datos.js"></script>
   <script src="js/comun.js"></script>
-  <script src="js/home.js"></script>
+  <script src="js/favoritos.js"></script>
 </body>
 </html>

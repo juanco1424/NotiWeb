@@ -3,12 +3,14 @@
    Capa de acceso a datos. Carga las noticias desde data/noticias.json y las
    fusiona con las creadas por el usuario (localStorage), descartando las
    que fueron eliminadas. Todas las páginas obtienen las noticias desde aquí.
+   También guarda la lista de favoritos del usuario.
    ========================================================================== */
 
 const Datos = (() => {
   const URL_JSON = 'data/noticias.json';
   const CLAVE_CREADAS = 'notiweb:noticias';     // noticias creadas en Gestión
   const CLAVE_ELIMINADAS = 'notiweb:eliminadas'; // ids ocultos (el JSON es de solo lectura)
+  const CLAVE_FAVORITOS = 'notiweb:favoritos';   // ids marcados como favoritos
 
   // Guarda la promesa para no repetir el fetch si se pide varias veces
   let cache = null;
@@ -65,5 +67,64 @@ const Datos = (() => {
     return noticias.find((noticia) => noticia.id === Number(id));
   }
 
-  return { obtenerNoticias, obtenerDestacadas, obtenerPorId };
+  /* ------------------------------------------------------------------------
+     Favoritos: lista de ids guardada en localStorage
+     ------------------------------------------------------------------------ */
+
+  /** Devuelve los ids de las noticias marcadas como favoritas. */
+  function obtenerIdsFavoritos() {
+    return leerLista(CLAVE_FAVORITOS).map(Number);
+  }
+
+  /** Indica si la noticia con ese id está en favoritos. */
+  function esFavorito(id) {
+    return obtenerIdsFavoritos().includes(Number(id));
+  }
+
+  /**
+   * Agrega o quita una noticia de favoritos.
+   * @returns {boolean} true si quedó como favorita, false si se quitó.
+   */
+  function alternarFavorito(id) {
+    const idNumerico = Number(id);
+    const favoritos = obtenerIdsFavoritos();
+    const yaEsta = favoritos.includes(idNumerico);
+    const nuevos = yaEsta
+      ? favoritos.filter((favorito) => favorito !== idNumerico)
+      : [...favoritos, idNumerico];
+
+    try {
+      localStorage.setItem(CLAVE_FAVORITOS, JSON.stringify(nuevos));
+    } catch (error) {
+      console.error('No se pudo guardar el favorito', error);
+      return yaEsta; // no cambió nada
+    }
+    return !yaEsta;
+  }
+
+  /** Quita todas las noticias de favoritos. */
+  function vaciarFavoritos() {
+    try {
+      localStorage.removeItem(CLAVE_FAVORITOS);
+    } catch (error) {
+      console.error('No se pudieron borrar los favoritos', error);
+    }
+  }
+
+  /** Devuelve las noticias completas que están en favoritos. */
+  async function obtenerFavoritas() {
+    const ids = obtenerIdsFavoritos();
+    const noticias = await obtenerNoticias();
+    return noticias.filter((noticia) => ids.includes(noticia.id));
+  }
+
+  return {
+    obtenerNoticias,
+    obtenerDestacadas,
+    obtenerPorId,
+    esFavorito,
+    alternarFavorito,
+    vaciarFavoritos,
+    obtenerFavoritas,
+  };
 })();

@@ -154,3 +154,185 @@
   background: var(--error-bg);
   color: var(--error);
 }
+
+/* --------------------------------------------------------------------------
+   5. Card: botón de favorito y botón "Ver más" (variante Listado)
+   -------------------------------------------------------------------------- */
+
+/* Corazón circular sobre la imagen de la card */
+.card__fav {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card__fav:hover {
+  border-color: var(--soft);
+  color: var(--accent);
+}
+
+/* Estado activo: corazón relleno en el color de acento */
+.card__fav[aria-pressed="true"] {
+  color: var(--accent);
+}
+
+.card__fav[aria-pressed="true"] svg,
+.btn--fav[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+
+/* "Ver más" como botón: se alinea abajo aunque el texto sea más corto */
+.card__btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. Botón de favorito con texto (vista de Detalle)
+   -------------------------------------------------------------------------- */
+/* En el botón primario el corazón se rellena (regla de la sección 5);
+   en la versión ghost, además, el borde y el texto pasan al acento */
+.btn--ghost.btn--fav[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   7. Migas de pan (breadcrumb)
+   -------------------------------------------------------------------------- */
+.migas__lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 13px;
+  color: var(--soft);
+}
+
+.migas__lista li + li::before {
+  content: "/";
+  margin-inline: 6px;
+}
+
+.migas__lista a {
+  color: var(--soft);
+}
+
+.migas__lista a:hover {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   8. Buscador
+   -------------------------------------------------------------------------- */
+.buscador {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+}
+
+.buscador__input {
+  width: 100%;
+  min-height: var(--control-h);
+  padding: 0 14px;
+  background: var(--surface);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.buscador__input::placeholder {
+  color: var(--placeholder);
+}
+
+.buscador__input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 0;
+  border-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   9. Filtros por categoría (píldoras)
+   -------------------------------------------------------------------------- */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filtro {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 16px;
+  background: var(--surface);
+  border: 1px solid var(--input-border);
+  border-radius: 999px;
+  font-size: 14px;
+  color: #46423b;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.filtro:hover {
+  border-color: var(--soft);
+  color: var(--ink);
+}
+
+.filtro[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   10. Paginación
+   -------------------------------------------------------------------------- */
+.paginacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.paginacion__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--control-h);
+  height: var(--control-h);
+  padding: 0 6px;
+  background: var(--surface);
+  border: 1px solid var(--input-border);
+  border-radius: 999px;
+  font-size: 14px;
+  color: #46423b;
+}
+
+.paginacion__btn:hover:not(:disabled) {
+  border-color: var(--soft);
+  color: var(--ink);
+}
+
+.paginacion__btn[aria-current="page"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.paginacion__btn:disabled {
+  cursor: default;
+  opacity: 0.4;
+}

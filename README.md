@@ -75,6 +75,12 @@ En la terminal donde lo levantaste, presiona `Ctrl + C`.
 - **Nunca** escribas noticias a mano en el HTML: pídelas con `Datos.obtenerNoticias()`,
   `Datos.obtenerDestacadas()` o `Datos.obtenerPorId(id)`.
 - Para pintar una card usa `Comun.crearTarjeta(noticia)`; así todas las páginas comparten el mismo componente.
+  En el Listado se usa `Comun.crearTarjeta(noticia, { favorito: true, variante: 'listado' })`
+  para mostrar el corazón y el botón "Ver más" del diseño.
+- Los favoritos se guardan en `localStorage` (clave `notiweb:favoritos`): usa
+  `Datos.esFavorito(id)`, `Datos.alternarFavorito(id)`, `Datos.obtenerFavoritas()` y `Datos.vaciarFavoritos()`.
+- En `contenido` de cada noticia, cada elemento es un párrafo (texto) o un subtítulo
+  (`{ "subtitulo": "Cómo participar" }`). El campo opcional `pieFoto` es el pie de la imagen.
 - Los colores y medidas salen de las variables de `css/base.css` (tokens del Figma): no uses colores sueltos.
 - El header y el footer deben copiarse idénticos en cada página nueva, cambiando solo el
   `aria-current="page"` al enlace activo del menú.
@@ -84,14 +90,20 @@ En la terminal donde lo levantaste, presiona `Ctrl + C`.
 ```
 NotiWeb/
 ├── index.html            # Home
+├── noticias.html         # Listado de noticias
+├── detalle.html          # Detalle de noticia (detalle.html?id=3)
+├── favoritos.html        # Noticias guardadas como favoritas
 ├── css/
 │   ├── base.css          # reset, variables (tokens de diseño), tipografía
 │   ├── layout.css        # .wrap, header, footer, grillas, secciones, responsive
 │   └── componentes.css   # botones, chips, cards, estados
 ├── js/
-│   ├── datos.js          # carga del JSON + fusión con localStorage
-│   ├── comun.js          # fecha del header, menú móvil, componente card
-│   └── home.js           # render de noticias destacadas
+│   ├── datos.js          # carga del JSON + fusión con localStorage + favoritos
+│   ├── comun.js          # fecha del header, menú móvil, componente card (con corazón opcional)
+│   ├── home.js           # render de noticias destacadas
+│   ├── noticias.js       # listado: búsqueda, filtros y paginación
+│   ├── detalle.js        # detalle: lee el id de la URL y pinta la noticia
+│   └── favoritos.js      # favoritos: lista, quitar uno y quitar todos
 ├── data/
 │   └── noticias.json     # 12 noticias (3 destacadas)
 ├── img/                  # imágenes de las noticias
@@ -101,9 +113,9 @@ NotiWeb/
 ## Estado del desarrollo
 
 - [x] Home (`index.html`)
-- [ ] Listado de noticias (`noticias.html`)
-- [ ] Detalle de noticia (`detalle.html`)
-- [ ] Favoritos (`favoritos.html`)
+- [x] Listado de noticias (`noticias.html`): búsqueda, filtro por categoría, paginación y favoritos
+- [x] Detalle de noticia (`detalle.html`): artículo completo por `?id=`, con botones de favoritos sincronizados
+- [x] Favoritos (`favoritos.html`): lista guardada en `localStorage`, quitar uno o todos
 - [ ] Contacto (`contacto.html`)
 - [ ] Gestión — mini CRUD (`gestion.html`)
 

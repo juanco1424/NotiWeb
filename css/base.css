@@ -85,6 +85,11 @@ button {
   cursor: pointer;
 }
 
+/* El atributo hidden siempre oculta, aunque la clase defina display */
+[hidden] {
+  display: none !important;
+}
+
 /* --------------------------------------------------------------------------
    3. Tipografía
    -------------------------------------------------------------------------- */

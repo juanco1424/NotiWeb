@@ -1,7 +1,8 @@
 /* ==========================================================================
    NotiWeb — layout.css
-   Estructura de página: contenedores, header, footer, grillas y
-   secciones del Home. Incluye los ajustes responsive.
+   Estructura de página: contenedores, header, footer, grillas,
+   secciones del Home, encabezado de páginas internas y detalle de noticia.
+   Incluye los ajustes responsive.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -295,10 +296,10 @@
   font-weight: 600;
 }
 
-/* Banda de llamado a la acción (CTA) oscura */
+/* Llamado a la acción (CTA): caja oscura con espacio claro alrededor,
+   así no se funde con el footer (que usa el mismo color) */
 .cta {
-  background: var(--dark);
-  color: var(--dark-text);
+  padding-block: 0 64px;
 }
 
 .cta__inner {
@@ -306,7 +307,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding-block: 48px;
+  padding: 44px 48px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  color: var(--dark-text);
 }
 
 .cta__title {
@@ -421,13 +425,297 @@
     flex-wrap: wrap;
   }
 
+  .cta {
+    padding-bottom: 48px;
+  }
+
   .cta__inner {
     flex-direction: column;
     align-items: flex-start;
+    padding: 32px 24px;
   }
 
   .footer__grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+}
+
+/* --------------------------------------------------------------------------
+   7. Encabezado de páginas internas (Listado, Favoritos, Contacto…)
+   Banda blanca con migas de pan, título y herramientas.
+   -------------------------------------------------------------------------- */
+.page-head {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-head__inner {
+  padding-block: 48px 28px;
+}
+
+.page-head__top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.page-head__title {
+  font-size: 42px;
+  line-height: 1.12;
+  letter-spacing: -0.4px;
+}
+
+.page-head__tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 28px;
+}
+
+.page-head__count {
+  font-size: 13px;
+  color: var(--soft);
+  white-space: nowrap;
+}
+
+/* Sección de resultados del Listado */
+.listado {
+  padding-block: 36px 64px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Detalle de noticia
+   Banda blanca con el encabezado + imagen y cuerpo sobre el fondo general.
+   -------------------------------------------------------------------------- */
+.articulo-head {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.articulo-head__inner {
+  padding-block: 44px 40px;
+}
+
+.articulo-head .chip {
+  margin-top: 20px;
+}
+
+.articulo__title {
+  margin-top: 12px;
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -0.4px;
+}
+
+.articulo__lead {
+  margin-top: 18px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Autor · fecha · tiempo de lectura */
+.articulo__datos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--soft);
+}
+
+.articulo__datos > * + *::before {
+  content: "·";
+  margin-inline: 10px;
+}
+
+.articulo__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Imagen a lo ancho del contenedor principal (1080px) */
+.articulo {
+  padding-block: 40px 56px;
+}
+
+.articulo__media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--img-ph);
+  color: var(--placeholder);
+  font-size: 15px;
+}
+
+/* La imagen tapa el texto marcador; si no carga, el texto queda visible */
+.articulo__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.articulo__pie {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--soft);
+}
+
+/* Cuerpo del artículo en serif, con más interlineado para lectura larga */
+.articulo__cuerpo {
+  margin-top: 40px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+.articulo__cuerpo p + p {
+  margin-top: 1.1em;
+}
+
+.articulo__cuerpo h2 {
+  margin-block: 1.3em 0.6em;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+/* Caja final: invitación a guardar la noticia */
+.articulo__cierre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 44px;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.articulo__cierre-texto {
+  flex: 1 1 220px; /* se ajusta en dos líneas para dejar los botones en la misma fila */
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.articulo__cierre-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Estado "noticia no encontrada" */
+.articulo-head--vacio {
+  min-height: 50vh;
+}
+
+.articulo-head--vacio .articulo__lead {
+  max-width: 520px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive de páginas internas
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .page-head__title {
+    font-size: 36px;
+  }
+
+  .articulo__title {
+    font-size: 36px;
+  }
+
+  .articulo__media {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-head__inner {
+    padding-block: 32px 24px;
+  }
+
+  /* Título y buscador apilados; el buscador ocupa todo el ancho */
+  .page-head__top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-head__title {
+    font-size: 30px;
+  }
+
+  /* Más específico que .buscador (componentes.css se carga después) */
+  .page-head .buscador {
+    max-width: none;
+  }
+
+  .page-head__tools {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .articulo-head__inner {
+    padding-block: 32px 28px;
+  }
+
+  .articulo {
+    padding-block: 24px 48px;
+  }
+
+  .articulo__botones .btn,
+  .articulo__cierre-botones,
+  .articulo__cierre-botones .btn {
+    width: 100%;
+  }
+
+  .articulo__title {
+    font-size: 28px;
+  }
+
+  .articulo__lead {
+    font-size: 16px;
+  }
+
+  .articulo__media {
+    height: 220px;
+  }
+
+  .articulo__cuerpo {
+    font-size: 17px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Favoritos
+   -------------------------------------------------------------------------- */
+.page-head__intro {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Estado vacío con botón para ir al listado */
+.estado--vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.estado__titulo {
+  font-size: 22px;
 }
