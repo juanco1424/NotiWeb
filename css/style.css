@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #ffffff;
+}
+
+
+/* Encabezado */
+
+header {
+    border-bottom: 1px solid #ddd;
+}
+
+.fecha,
+.ubicacion {
+    font-size: 12px;
+    color: #777;
+    padding: 8px 30px;
+}
+
+.fecha {
+    float: left;
+}
+
+.ubicacion {
+    text-align: right;
+}
+
+
+/* Barra de navegación */
+
+.barra-navegacion {
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-top: 1px solid #eee;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: #222;
+}
+
+.logo span {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #9b3d32;
+}
+
+
+/* Menú */
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #9b3d32;
+}
+
+
+/* Contenido */
+
+main {
+    padding: 50px;
+}
+
+main h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+main p {
+    color: #666;
+}
+
+.ruta {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.descripcion {
+    max-width: 700px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+
+/* Contenedor principal */
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+}
+
+
+/* Formulario */
+
+.formulario {
+    border: 1px solid #ddd;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.formulario h3,
+.informacion-contacto h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+
+/* Cada campo */
+
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.campo label span {
+    color: #b33a2f;
+}
+
+
+/* Inputs */
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+
+/* Cuando el usuario selecciona el campo */
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #9b3d32;
+}
+
+
+/* Mensajes de error */
+
+.campo small {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #b33a2f;
+}
+
+
+/* Botón */
+
+.formulario button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 3px;
+    background-color: #9b3d32;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #7e3028;
+}
+
+
+/* Información de contacto */
+
+.informacion-contacto {
+    border: 1px solid #ddd;
+    padding: 30px;
+    background-color: #f8f8f8;
+    height: fit-content;
+}
+
+.informacion-contacto p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* Mensaje de confirmación */
+
+#confirmacion {
+    margin-top: 20px;
+    padding: 15px;
+    display: none;
+    border: 1px solid #8aaa8a;
+    background-color: #eef7ee;
+    color: #356635;
+    font-size: 14px;
+}
+
+
+/* Adaptación para celulares */
+
+@media (max-width: 768px) {
+
+    .barra-navegacion {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+}
