@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto - NotiWeb</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="fecha">
+            LUNES, 28 de septiembre de 2026
+        </div>
+
+        <div class="ubicacion">
+            Bogotá, Colombia
+        </div>
+
+        <div class="barra-navegacion">
+
+            <div class="logo">
+                <h1>NotiWeb</h1>
+                <span>PLATAFORMA DE NOTICIAS</span>
+            </div>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="#">Noticias</a>
+                <a href="#">Favoritos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="#">Gestión</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="ruta">
+            Inicio / Contacto
+        </div>
+
+        <h2>Contacto</h2>
+
+        <p class="descripcion">
+            Escríbenos tus dudas, sugerencias o propuestas de noticias.
+            Responderemos en un plazo de 48 horas.
+        </p>
+
+
+        <section class="contacto-contenido">
+
+            <div class="formulario">
+
+                <h3>Envíanos un mensaje</h3>
+
+                <form id="formularioContacto">
+
+                    <div class="campo">
+
+                        <label for="nombre">
+                            Nombre completo <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Juan Camargo"
+                        >
+
+                        <small id="errorNombre"></small>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="correo">
+                            Correo electrónico <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="juan@correo.com"
+                        >
+
+                        <small id="errorCorreo"></small>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="telefono">
+                            Número de teléfono <span>*</span>
+                        </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        placeholder="3001234567"
+                    >
+
+                    <small id="errorTelefono"></small>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="asunto">
+                            Asunto <span>*</span>
+                        </label>
+
+                        <select id="asunto" name="asunto">
+
+                            <option value="">
+                                Selecciona un asunto
+                            </option>
+
+                            <option value="consulta">
+                                Consulta
+                            </option>
+
+                            <option value="sugerencia">
+                                Sugerencia
+                            </option>
+
+                            <option value="noticia">
+                                Propuesta de noticia
+                            </option>
+
+                            <option value="otro">
+                                Otro
+                            </option>
+
+                        </select>
+
+                        <small id="errorAsunto"></small>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="mensaje">
+                            Mensaje <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            placeholder="Escribe aquí tu mensaje..."
+                            rows="6"
+                        ></textarea>
+
+                        <small id="errorMensaje"></small>
+
+                    </div>
+
+
+                    <button type="submit">
+                        Enviar mensaje
+                    </button>
+
+
+                    <div id="confirmacion"></div>
+
+                </form>
+            </div>
+
+            <aside class="informacion-contacto">
+
+                <h3>Información de contacto</h3>
+
+                <p>
+                    ✉ contacto@notiweb.com
+                </p>
+
+                <p>
+                    ☎ +57 300 000 0000
+                </p>
+
+                <p>
+                    📍 Calle 00 #00-00, Bogotá
+                </p>
+
+                <p>
+                    🕐 Lunes a viernes, 8:00 a 17:00
+                </p>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script src="JS/contacto.js"></script>
+
+    </body>
+</html>
